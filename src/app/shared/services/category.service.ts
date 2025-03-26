@@ -35,7 +35,6 @@ export class CategoryService {
     let header = {
       'Content-Type': 'application/json'
     };
-    return this.http.put<any>(`${this.url}/${id}`, catData, { headers : header });
-
+    return this.http.put<any>(this.url + '/' + id, catData, { headers : header });
   } 
 }

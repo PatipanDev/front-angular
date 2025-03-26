@@ -36,7 +36,19 @@ export class UpdateCategoryComponent implements OnInit{
     )
   }
   updateCategory(newcatData: Categories): void{
-    console.log(newcatData)
-    
+    this.actiRoute.params.subscribe(
+      (res)=> {
+        this.category_id = res['id'];
+        console.log(this.category_id)
+        this.catServ.updateCategory(newcatData,this.category_id).subscribe(
+          (res1) => {
+            console.log
+            this.cat_Data = res1.data;
+            console.log(this.cat_Data)
+          }
+        )
+      }
+    )
+
   }
 }

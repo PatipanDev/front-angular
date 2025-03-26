@@ -13,6 +13,7 @@ import { NgbModal,NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 export class CategoryComponent {
 
   categories!: Categories[];
+  del_catName ='';
   
 
   constructor(
@@ -45,7 +46,26 @@ export class CategoryComponent {
     this.router.navigate(['updateCat',id]);
   }
 
-  openConfirmModel(content: any): void {
-    this.modalService.open(content);
+  openConfirmModel(content: any, cat: Categories): void {
+    this.del_catName = cat.category_name;
+    this.modalService.open(content).result.then(
+      (resModal)=>{
+        if(resModal){
+          this.catServ.delCategory(cat.category_id).subscribe(
+            (res)=>{
+              if(res.status =='ok')
+               console.log(res)
+              alert('ลบข้อมูลสำเร็จ')
+              this.categories = this.categories.filter(c => c.category_id !== cat.category_id);
+            }
+          )
+          console.log(cat.category_id)
+          console.log(resModal)
+        }else{
+
+        }
+     
+      }
+    );
   }
 }
