@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import {CategoryService} from '../shared/services/category.service';
-import {CategoryModel, Categories} from '../shared/models/category.model';
+import {CategoryModel, Categories } from '../shared/models/category.model';
 import { Router } from '@angular/router';
+import { NgbModal,NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-category',
@@ -16,8 +17,13 @@ export class CategoryComponent {
 
   constructor(
     private catServ: CategoryService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private modalService: NgbModal,
+    modalConfig: NgbModalConfig
+  ) {
+    modalConfig.backdrop = 'static';
+		modalConfig.keyboard = false;
+  }
 
   ngOnInit(): void {
     this.catServ.getAllCategory().subscribe(
@@ -36,6 +42,10 @@ export class CategoryComponent {
   }
   gotoUpdatePage(id: any): void {
     console.log(id);
-    this.router.navigate(['updateCat']);
+    this.router.navigate(['updateCat',id]);
+  }
+
+  openConfirmModel(content: any): void {
+    this.modalService.open(content);
   }
 }

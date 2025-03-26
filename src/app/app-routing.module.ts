@@ -8,7 +8,7 @@ import { UpdateCategoryComponent } from './category/update-category/update-categ
 const routes: Routes = [
   {path: 'category', component: CategoryComponent},
   {path: 'insertCat', component: InsertCategoryComponent},
-  {path: 'updateCat', component: UpdateCategoryComponent},
+  {path: 'updateCat/:id', component: UpdateCategoryComponent},
   // {patj}
 ];
 

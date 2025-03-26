@@ -1,1 +1,43 @@
-<p>update-category works!</p>
+<!-- ฟอร์มใช้ในการเพิ่มข้อมูล -->
+<div class="container">
+    <br>
+    <div class="d-flex justify-content-center bg-color shadow-sm rounded">
+        <div class="h3 p-3">แก้ไขข้อมูลประเภทสินค้า</div>
+    </div>
+    <div class="container-fluid shadow-sm rounded bg-light">
+        <form #catData="ngForm" (ngSubmit)="updateCategory(catData.value)">
+            <div class="row"> 
+                <div class="col-5 justify-content-end d-flex p-3">
+                    ชื่อประเภทสินค้า
+                </div>
+                <div class="col-7 p-3">
+                    <input 
+                    ngModel type="text" class="form-control" 
+                    name="category_name"
+                    [ngModel]="cat_Data.category_name"
+                    />
+                </div>
+                <br>
+                <div class="col-5 justify-content-end d-flex p-3">
+                    รายละเอียดสินค้า
+                </div>
+                <div class="col-7 p-3">
+                    <input 
+                    ngModel type="text" 
+                    class="form-control" 
+                    name="description"
+                    [ngModel]="cat_Data.description"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5">
+
+                </div>
+                <div class="col-7">
+                    <button tupe="submit" class="btn btn-primary " style="width: 300px;">เพิ่มข้อมูล</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
