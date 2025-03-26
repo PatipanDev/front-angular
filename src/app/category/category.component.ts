@@ -12,23 +12,30 @@ import { Router } from '@angular/router';
 export class CategoryComponent {
 
   categories!: Categories[];
+  
 
-  constructor(private catServ: CategoryService) {}
+  constructor(
+    private catServ: CategoryService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.catServ.getAllCategory().subscribe(
       (res) => {
-        if (res.status == 'ok')
+        if (res.status == 'ok'){
           this.categories = res.data;
-        else
+          console.log(this.categories);
+        }else{
           alert('Fail!')
+        }
       }
     );
   }
-  goInsertPage(): void{
+  gotoInsertPage(): void {
     this.router.navigate(['insertCat']);
   }
-  gotoUpdatePage(): void{
-    this.router
+  gotoUpdatePage(id: any): void {
+    console.log(id);
+    this.router.navigate(['updateCat']);
   }
 }
