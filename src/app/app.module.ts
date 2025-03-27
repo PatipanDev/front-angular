@@ -11,6 +11,8 @@ import { provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { InsertCategoryComponent } from './category/insert-category/insert-category.component';
 import { UpdateCategoryComponent } from './category/update-category/update-category.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { UpdateCategoryComponent } from './category/update-category/update-categ
     FooterComponent,
     CategoryComponent,
     InsertCategoryComponent,
-    UpdateCategoryComponent
+    UpdateCategoryComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

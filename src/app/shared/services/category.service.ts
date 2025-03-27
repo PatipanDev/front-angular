@@ -13,28 +13,38 @@ export class CategoryService {
 
   url = 'http://10.7.10.18:7890/api/category'
 
+
   getAllCategory(): Observable<CategoryModel> {
     return this.http.get<CategoryModel>(this.url);
   }
   getCategorybyID(id: any): Observable<OneCategoryModel> {
-    let xxx = this.url+'/'+id
+    let xxx = this.url + '/' + id
     console.log(xxx)
     return this.http.get<OneCategoryModel>(this.url + '/' + id);
   }
   delCategory(id: any): Observable<any> {
-    return this.http.delete<any>(this.url + '/' + id);
+    let access_token = localStorage.getItem('access_token')
+    let header = {};
+    if (access_token) {
+      header = {
+        'Autholization': access_token!.toString()
+      }
+
+    }
+    return this.http.delete<any>(this.url + '/' + id, { headers: header });
+
   }
-  setCategory(catData: any): Observable<any>{
-    let header ={
+  setCategory(catData: any): Observable<any> {
+    let header = {
       'Content-type': 'application/json'
 
     };
-    return this.http.post<any>(this.url, catData, {headers : header})
+    return this.http.post<any>(this.url, catData, { headers: header })
   }
-  updateCategory(id: any, catData: any):Observable<any>{
+  updateCategory(id: any, catData: any): Observable<any> {
     let header = {
       'Content-Type': 'application/json'
     };
-    return this.http.put<any>(this.url + '/' + id, catData, { headers : header });
-  } 
+    return this.http.put<any>(this.url + '/' + id, catData, { headers: header });
+  }
 }

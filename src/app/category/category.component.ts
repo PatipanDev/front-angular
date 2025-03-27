@@ -54,6 +54,7 @@ export class CategoryComponent {
           this.catServ.delCategory(cat.category_id).subscribe(
             (res)=>{
               if(res.status =='ok')
+                alert('ลบข้อมูลสำเร็จ')
                console.log(res)
               alert('ลบข้อมูลสำเร็จ')
               this.categories = this.categories.filter(c => c.category_id !== cat.category_id);
