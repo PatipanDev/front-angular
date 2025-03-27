@@ -5,16 +5,17 @@
         <div class="h3 p-3">แก้ไขข้อมูลประเภทสินค้า</div>
     </div>
     <div class="container-fluid shadow-sm rounded bg-light">
-        <form #catData="ngForm" (ngSubmit)="updateCategory(catData.value)">
+        <form *ngIf="cat_Data" #catData="ngForm" (ngSubmit)="updateCategory(cat_Data)">
             <div class="row"> 
                 <div class="col-5 justify-content-end d-flex p-3">
                     ชื่อประเภทสินค้า
                 </div>
                 <div class="col-7 p-3">
                     <input 
-                    ngModel type="text" class="form-control" 
-                    name="category_name"
-                    [ngModel]="cat_Data.category_name"
+                        [(ngModel)]="cat_Data.category_name" 
+                        type="text" 
+                        class="form-control" 
+                        name="category_name"
                     />
                 </div>
                 <br>
@@ -23,19 +24,17 @@
                 </div>
                 <div class="col-7 p-3">
                     <input 
-                    ngModel type="text" 
-                    class="form-control" 
-                    name="description"
-                    [ngModel]="cat_Data.description"
+                        [(ngModel)]="cat_Data.description" 
+                        type="text" 
+                        class="form-control" 
+                        name="description"
                     />
                 </div>
             </div>
             <div class="row">
-                <div class="col-5">
-
-                </div>
+                <div class="col-5"></div>
                 <div class="col-7">
-                    <button tupe="submit" class="btn btn-primary " style="width: 300px;">เพิ่มข้อมูล</button>
+                    <button type="submit" class="btn btn-primary" style="width: 300px;">แก้ไขข้อมูล</button>
                 </div>
             </div>
         </form>

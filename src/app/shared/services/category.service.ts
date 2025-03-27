@@ -11,7 +11,7 @@ export class CategoryService {
 
   constructor(private http: HttpClient) { }
 
-  url = 'http://10.7.10.16:7890/api/category'
+  url = 'http://10.7.10.18:7890/api/category'
 
   getAllCategory(): Observable<CategoryModel> {
     return this.http.get<CategoryModel>(this.url);
