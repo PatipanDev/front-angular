@@ -7,6 +7,9 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ComspecComponent } from './comspec/comspec.component';
 import { ProductComponent } from './product/product.component';
+import { isNgContainer } from '@angular/compiler';
+import { InsrtProductComponent } from './product/insrt-product/insrt-product.component';
+import { UpdateProductComponent } from './product/update-product/update-product.component';
 
 
 const routes: Routes = [
@@ -16,7 +19,10 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent },
   {path: 'comspec', component: ComspecComponent},
-  {path: 'product', component: ProductComponent}
+  // product นำทางไป
+  {path: 'product', component: ProductComponent},
+  {path: 'insertPro', component: InsrtProductComponent},
+  {path: 'updatePro/:id', component: UpdateProductComponent},
   // {patj}
 ];
 

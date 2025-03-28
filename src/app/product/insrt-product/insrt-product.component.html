@@ -1,0 +1,68 @@
+<!-- ฟอร์มใช้ในการเพิ่มข้อมูล -->
+<div class="container">
+    <br>
+    <div class="d-flex justify-content-center bg-color shadow-sm rounded">
+        <div class="h3 p-3">เพิ่มข้อมูลประเภทสินค้า</div>
+    </div>
+    <div class="container-fluid shadow-sm rounded bg-light">
+        <form #prodData="ngForm" (ngSubmit)="insertProducts(prodData.value)">
+            <div class="row">
+                <div class="col-5 justify-content-end d-flex p-3">
+                    ชื่อสินค้า
+                </div>
+                <div class="col-7 p-3">
+                    <input ngModel type="text" class="form-control" name="product_name" required />
+                </div>
+                <br>
+                <div class="col-5 justify-content-end d-flex p-3">
+                    รายละเอียดสินค้า
+                </div>
+                <div class="col-7 p-3">
+                    <textarea ngModel type="text" class="form-control" name="description" required></textarea>
+                </div>
+                <div class="col-5 d-flex justify-content-end p-3">
+                    ประเภทของสินค้า
+                </div>
+                <div class="col-7">
+                    <div ngbDropdown class="d-inline-block">
+                        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                            {{cat_name}}
+                        </button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                            <button ngbDropdownItem *ngFor="let cat of categories" type="button"
+                                (click)="selectedCat(cat)">
+                                {{cat.category_name}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5 d-flex justify-content-end p-3">
+                    ราคาต่อหน่วย
+                </div>
+                <div class="col-7 p-3">
+                    <input ngModel type="number" class="form-control" name="unit_price" required />
+                </div>
+
+                <div class="col-5 d-flex justify-content-end p-3">
+                    จำนวนคงเหลือ
+                </div>
+                <div class="col-7 p-3">
+                    <input ngModel type="number" class="form-control" name="quantity" required />
+                </div>
+                <div class="col-5 d-flex justify-content-end p-3">
+                    เลือกไฟล์
+                </div>
+                <div class="col-7 p-3">
+                    <input  type="file" class="form-control"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5">
+                </div>
+                <div class="col-7">
+                    <button type="submit" class="btn btn-primary" style="width: 300px;">เพิ่มข้อมูล</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

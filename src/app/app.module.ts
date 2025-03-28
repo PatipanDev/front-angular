@@ -13,6 +13,9 @@ import { InsertCategoryComponent } from './category/insert-category/insert-categ
 import { UpdateCategoryComponent } from './category/update-category/update-category.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { UpdateProductComponent } from './product/update-product/update-product.component';
+import { InsrtProductComponent } from './product/insrt-product/insrt-product.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { RegisterComponent } from './register/register.component';
     UpdateCategoryComponent,
     LoginComponent,
     RegisterComponent,
+    ProductComponent,
+    UpdateProductComponent,
+    InsrtProductComponent
   ],
   imports: [
     BrowserModule,
