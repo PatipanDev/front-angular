@@ -5,6 +5,8 @@ import { InsertCategoryComponent } from './category/insert-category/insert-categ
 import { UpdateCategoryComponent } from './category/update-category/update-category.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { ComspecComponent } from './comspec/comspec.component';
+import { ProductComponent } from './product/product.component';
 
 
 const routes: Routes = [
@@ -12,7 +14,9 @@ const routes: Routes = [
   {path: 'insertCat', component: InsertCategoryComponent},
   {path: 'updateCat/:id', component: UpdateCategoryComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent }
+  {path: 'login', component: LoginComponent },
+  {path: 'comspec', component: ComspecComponent},
+  {path: 'product', component: ProductComponent}
   // {patj}
 ];
 

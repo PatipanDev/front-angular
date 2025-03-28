@@ -1,13 +1,14 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CategoryModel, OneCategoryModel } from '../models/category.model';
 import { environment } from '../../../environments/environment';
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService {
+export class ProductService {
   private url = `${environment.apiUrl}/api/category`
   private access_token: string | null = null; // ประกาศค่าตัวแปรเริ่มต้นในที่นี้
 

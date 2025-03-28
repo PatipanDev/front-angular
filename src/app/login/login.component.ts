@@ -21,6 +21,7 @@ export class LoginComponent {
         if(res.status == 'ok'){
           localStorage.setItem('access_token',res.token);
           this.router.navigate(['category'])
+          alert('Login seccess')
         }else{
           alert('login fail')
         }

@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Inject } from '@angular/core'; 
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +12,8 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  urllogin = 'http://10.7.10.18:7890/api/login'
-  urlprofile = 'http://10.7.10.18:7890/api/user'
+  urllogin = `${environment.apiUrl}/api/login`
+  urlprofile = `${environment.apiUrl}/api/user`
   
 
   login(userAccout: any):Observable<any>{

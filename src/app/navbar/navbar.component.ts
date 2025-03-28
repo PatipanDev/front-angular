@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+
+  // constructor(private router: Router){
+  //   fd
+  // }
   isCollapsed = false;
+  // logout(): void{
+  //   localStorage.removeItem('access_token')
+  // }
 
 }

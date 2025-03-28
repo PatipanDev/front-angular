@@ -44,12 +44,14 @@ export class UpdateCategoryComponent implements OnInit {
       (res) => {
         // this.cat_Data = res.data;
         if (res.status == 'ok') {
+          alert('คุณอัพเดตข้อมูลสำเร็จ')
           this.router.navigate(['category'])
         } else {
-          alert('Connection insert failed.');
+          alert('คุณอัพเดตข้อมูลไม่ได้')
         }
-        alert('คุณอัพเดตข้อมูลสำเร็จ')
-        this.router.navigate(['category'])
+        
+        // this.router.navigate(['category'])
+        console.log(res)
         console.log('Updated Category Data:', this.cat_Data);
       },
       (error) => {
